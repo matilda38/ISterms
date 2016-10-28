@@ -287,16 +287,14 @@ int main(){
     //6바이트 짜리 plaintext
     BYTE plaintext1[6]={0x01,0x23,0x45,0x67,0x89,0xAB};
     BYTE plaintext2[6]={0x9A,0x6B,0xCC,0x10,0xE8,0x4A};
-<<<<<<< HEAD
     BYTE key[4]={0x12,0x34,0x56,0x78}; //sample key
     BYTE find_cipher[6]={0xFB,0xD0,0x40,0xD6,0xDB,0x9C};
     BYTE* ciphertext;
-=======
     //BYTE key[4]={0x12,0x34,0x56,0x78}; //sample key
     BYTE find_cipher[6]={0xFB,0xD0,0x40,0xD6,0xDB,0x9C};
     /*
      * BYTE* ciphertext;
->>>>>>> 6879dce2a92d1c32c6960419aca62f624429e53e
+
     ciphertext = Cipher(plain_sample,key);
     int i;
 
@@ -304,6 +302,6 @@ int main(){
         printf("ciphertext: %x",ciphertext[i]);
 
     //Decrypt_KEY(plaintext1,find_cipher);
-
+        */
     return 0;
 }

@@ -266,12 +266,23 @@ void Decrypt_KEY(BYTE* plaintext, BYTE* ciphertext){
         }
         if(BF_key[3]< 0xFF)
             BF_key[3]+=(BYTE)0x01;
-        else if(BF_key[3]>= 0xFF && BF_key[2]<0xFF)
+        else if(BF_key[2]<0xFF){
             BF_key[2]+=(BYTE)0x01;
-        else if(BF_key[2]>=0xFF && BF_key[1]<0xFF)
+            BF_key[3]=0x00;
+        }
+        else if(BF_key[1]<0xFF){
             BF_key[1]+=(BYTE)0x01;
-        else if(BF_key[1]>=0xFF&&BF_key[0]<0xFF)
+            BF_key[2]=0x00;
+            BF_key[3]=0x00;
+       }
+       else if(BF_key[0]<0xFF){
             BF_key[0]+=(BYTE)0x01;
+            BF_key[1]=0x00;
+            BF_key[2]=0x00;
+            BF_key[3]=0x00; 
+       }
+       else
+        goto final; 
     }
     final:
         printf("key: %x",BF_key[0]);
